@@ -1,0 +1,261 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color:#fcf5e9;
+    --dark-color:#333;
+    --container-normal:1100px;
+    --container-wide:1400px;
+    --container-narrow:900px;
+}
+
+body{
+    font-family: 'open sans', sans-serif;
+    line-height:1.6;
+}
+
+/*utilities*/
+
+.bg-primary{
+    background: var(--primary-color);
+    color:#333;
+}
+.bg-dark{
+    background-color:#333;
+    color:#fff;
+}
+.bg-dark .bg-primary{
+    padding: 0 0.3rem;
+}
+
+.btn {
+    display:inline-block;
+    padding: 1rem 2rem;
+    font-family: inherit;
+    font-size: inherit;
+    cursor:pointer;
+
+
+}
+.btn:hover{
+    background: #333;
+    color:white;
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+ul{
+    list-style: none;
+}
+img{
+    max-width: 100%;
+}
+.container{
+    max-width:var(--container-normal);
+    margin:20px auto;
+    padding:20px;
+    display:flex;
+    justify-content: space-between;
+
+}
+.container-lg{
+    max-width: var(--container-wide);
+}
+.container-sm{
+    max-width: var(--container-narrow);
+}
+.container .main-menu{
+    display:flex;
+    gap:20px;
+
+}
+.header .logo{
+    width:130px;
+}
+
+.header a:hover{
+    background: var(--primary-color);
+
+}
+.current{
+    background: var(--primary-color);
+    font-weight: 600;
+}
+.hero{
+    height:500px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.hero h2{
+    font-weight: normal;
+    font-size:3rem;
+    line-height: 1.4;
+    text-align: center;
+}
+.gallery-flex{
+    display:flex;
+    flex-wrap: wrap;
+    gap:20px;
+    max-width: 1400px;
+}
+.gallery-item{
+    width: calc(33.333% - 20px);
+    border-radius: 10px;
+
+}
+.gallery-item img{
+    border-radius: 10px;
+
+}
+.gallery-item a:hover{
+    opacity:0.9;
+}
+
+.footer-flex{
+    border-top:1px solid black;
+    max-width:var(--container-normal);
+    margin:20px auto;
+    padding:20px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-flex img{
+    width:120px;
+    height:35px;
+}
+.footer i:hover{
+    color:rgb(154, 148, 148);
+}
+.services{
+    max-width:var(--container-normal);
+    margin: 20px auto;
+    padding:20px;
+}
+
+.services h2{
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+}
+.service-flex{
+    display:flex;
+    padding:2rem 1.5rem;
+    margin:2rem;
+    align-items: center;
+    justify-content: space-between;
+    gap:20px;
+}
+
+.service-item p{
+    margin:10px auto;
+}
+
+.team{
+    display:flex;
+    padding:3rem 0 3rem;
+    margin:2rem auto;
+}
+
+.team h2{
+    text-align:center;
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+
+
+}
+
+.team-flex{
+    display:flex;
+    gap:20px;
+    align-items: center;
+    justify-content: space-between;
+}
+.team-flex img{
+    border-radius: 10px;
+}
+
+.contact-container{
+    max-width:var(--container-normal);
+    margin:20px auto;
+    padding:20px;
+
+}
+
+.contact h2{
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+}
+
+.contact p{
+    text-align: center;
+    margin-bottom:2rem;
+}
+.form-group input, 
+.form-group textarea {
+    border:none;
+    border-bottom: solid 1px black;
+    width:100%;
+    padding-bottom: 1rem;
+    margin: 1rem;
+    font-size: inherit;
+    font-family: inherit;
+
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline:0;
+}
+
+.form-group textarea{
+    height:200px;
+    resize: none;
+}
+
+.contact button{
+    width:100%;
+}
+
+
+@media (max-width:768px){
+    .container,.team .team-flex, .services .service-flex{
+        flex-direction: column;
+        align-items: center;
+        gap:20px;
+    }
+
+    .hero{
+        height:300px;
+    }
+    .hero h2{
+        font-size: 1.8rem;
+    }
+    .gallery-item {
+        width: calc(50% - 10px); /* 10px + 10px + 20px gap = 100% */
+      }
+    .footer-flex{
+        flex-direction: column;
+        gap:20px;
+        text-align: center;
+    }
+
+}
